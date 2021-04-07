@@ -1,12 +1,7 @@
 import React, { PureComponent } from 'react';
-/*
-9-1, 9-2 참조 코드
-import axios from 'axios';
-*/
-/*
-9-3 참조 코드
+
 import Api from '../../Api';
-*/
+
 import Heading from '../../../doit-ui/Heading';
 import Card from '../../../doit-ui/Card';
 
@@ -19,27 +14,25 @@ import TransactionTable from './TransactionTable';
 class TransactionList extends PureComponent {
   state = {
     transactions: [
-      {
-        id: 'btx_01',
-        name: '비트코인(BTC)',
-        totalPrice: '123,123,000,000원',
-        currentPrice: '75,399,000원',
-        datetime: '2021/04/03 08:23:22',
-      },
+      // {
+      //   id: 'btx_01',
+      //   name: '비트코인(BTC)',
+      //   totalPrice: '123,123,000,000원',
+      //   currentPrice: '75,399,000원',
+      //   datetime: '2021/04/03 08:23:22',
+      // },
     ],
   };
 
   componentDidMount() {
-    /*
-    9-2 참조 코드
-    axios.get('http://localhost:4000/transactions')
-      .then(response => this.setState({ transactions: response.data }));
-    */
-    /*
-    9-2 참조 코드
-    axios.get('http://localhost:4000/transactions', { params: { code: 'BTX' } })
-      .then(response => this.setState({ transactions: response.data }));
-    */
+    // axios
+    //   .get('http://localhost:4000/transactions')
+    //   .then((response) => this.setState({ transactions: response.data }));
+
+    Api.get('/transactions', { params: { code: 'BTC' } }).then((response) =>
+      this.setState({ transactions: response.data }),
+    );
+
     /*
     9-3 참조 코드
     Api.get('/transactions')

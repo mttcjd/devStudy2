@@ -1,0 +1,22 @@
+{
+    "transactions": [
+      {
+        "id": 1,
+        "code": "BTC",
+        "name": "비트코인(BTC)",
+        "totalPrice": 12391230000,
+        "currentPrice": 1020000,
+        "amount": 0.23,
+        "datetime": "2021/04/07 10:23:22"
+      },
+      {
+        "id": 2,
+        "code": "XRP",
+        "name": "리플(XRP)",
+        "totalPrice": 1230000,
+        "currentPrice": 1200,
+        "amount": 10,
+        "datetime": "2021/04/07 10:23:22"
+      }
+    ]
+  }

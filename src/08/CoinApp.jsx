@@ -1,13 +1,14 @@
 import React, { PureComponent } from 'react';
-// import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import AppLayout from './components/AppLayout';
-import MainPage from './components/main/MainPage';
+// import MainPage from './components/main/MainPage';
 // import NotFound from './components/NotFound';
-// import CoinOverview from './components/main/CoinOverview';
+import CoinOverview from './components/main/CoinOverview';
+import TransactionList from './components/main/TransactionList';
 // import TransactionListContainer from './containers/main/TransactionListContainer';
-// import configureStore from './store/configureStore';
+import configureStore from './store/configureStore';
 // import ModalProvider from './ModalProvider';
 // import NotificationContainer from './containers/main/NotificationContainer';
 // import NotificationContainer from './containers/NotificationContainer';
@@ -16,14 +17,16 @@ import MainPage from './components/main/MainPage';
 // import MainPage from '../13/AsyncMainPage';
 
 class CoinApp extends PureComponent {
-  //   store = configureStore();
+  store = configureStore();
 
   render() {
     return (
-      <AppLayout>
-        <MainPage />
-      </AppLayout>
-      //   <Provider store={this.store}>
+      <Provider store={this.store}>
+        <AppLayout>
+          <CoinOverview />
+          <TransactionList />
+        </AppLayout>
+      </Provider>
       //     <Router>
       //       <RouterStateContainer />
       //       <ModalProvider>
