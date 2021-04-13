@@ -47,7 +47,7 @@ class TransactionList extends PureComponent {
 
 TransactionList.defaultProps = {
   transactions: [],
-  requestTransactionList: () => {},
+  setTransactionList: () => {},
 };
 
 export default TransactionList;
